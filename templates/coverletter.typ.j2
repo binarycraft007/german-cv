@@ -1,0 +1,29 @@
+#import "template.typ": cover_letter
+
+#show: doc => cover_letter(
+  sender: (
+    name: "{{ personal.name }}",
+    address: "{{ personal.address }}",
+    zip: "{{ personal.zip }}",
+    city: "{{ personal.city }}",
+    phone: "{{ personal.phone }}",
+    email: "{{ personal.email }}"
+  ),
+  recipient: (
+    company: "{{ letter.recipient.company }}",
+    contact: "{{ letter.recipient.contact }}",
+    address: "{{ letter.recipient.address }}",
+    zip: "{{ letter.recipient.zip }}",
+    city: "{{ letter.recipient.city }}"
+  ),
+  date: "{{ letter.date }}",
+
+  subject: "{{ letter.subject }}",
+  salutation: "{{ letter.salutation }}",
+  closing: "{{ letter.closing }}",
+{% if personal.signature %}
+  signature: image("{{ personal.signature }}", width: 3cm),
+{% endif %}
+)[
+{{ letter.body }}
+]

@@ -1,0 +1,17 @@
+# Compiled output
+/output/
+*.pdf
+
+# Generated Typst files
+/cv/*.typ
+/coverletter/*.typ
+
+# But don't ignore the templates
+!/cv/template.typ
+!/coverletter/template.typ
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

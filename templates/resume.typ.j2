@@ -1,0 +1,107 @@
+#import "template.typ": *
+
+#let profile-image = image("{{ personal.profile_picture }}", width: 100%, height: 100%, fit: "contain")
+
+#show: resume.with(
+  author: (
+    firstname: "{{ personal.firstname }}",
+    lastname: "{{ personal.lastname }}",
+    positions: ("{{ personal.positions | join('", "') }}",),
+    email: "{{ personal.email }}",
+    phone: "{{ personal.phone }}",
+    address: "{{ personal.address }}",
+    github: "{{ personal.github }}",
+    linkedin: "{{ personal.linkedin }}",
+  ),
+  profile-picture: profile-image, 
+
+  sidebar-content: [
+    #v(1fr)
+
+    #sidebar-header("Education")
+
+    {% for item in education %}
+    #sidebar-item(
+      "{{ item.degree }}",
+      "{{ item.institution }}",
+      dates: "{{ item.dates }}"
+    )
+    {% endfor %}
+
+    #v(1fr)
+
+    #sidebar-header("Skills")
+
+    {% for skill in skills %}
+    #skill-bar("{{ skill.name }}", {{ skill.level }})
+    {% endfor %}
+
+    #v(1fr)
+
+    #sidebar-header("Languages")
+    {% for lang in languages %}
+    #language-item("{{ lang.name }}", "{{ lang.level }}")
+    {% endfor %}
+
+    #v(1fr)
+  ]
+)
+
+#main-header("About Me")
+{{ personal.about_me }}
+
+#main-header("Work Experience")
+
+{% for entry in experience %}
+#experience-entry(
+  date: "{{ entry.date }}",
+  company: "{{ entry.company }}",
+  title: "{{ entry.title }}",
+  description: [
+    {% for line in entry.description %}
+    - {{ line }}
+    {% endfor %}
+  ]
+)
+{% endfor %}
+
+{% if projects %}
+#main-header("Projects")
+
+{% for project in projects %}
+#project-entry(
+  "{{ project.name }}",
+  "{{ project.date }}",
+  [{{- project.description -}}]
+)
+{% endfor %}
+{% endif %}
+
+{% if certificates %}
+#main-header("Certificates")
+
+{% for cert in certificates %}
+#certificate-entry(
+  "{{ cert.name }}",
+  "{{ cert.issuer }}",
+  "{{ cert.date }}"
+)
+{% endfor %}
+{% endif %}
+
+{% if references %}
+#main-header("References")
+
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 10pt,
+  {% for ref in references %}
+  reference-item(
+    "{{ ref.name }}",
+    "{{ ref.company }}",
+    "{{ ref.phone }}",
+    "{{ ref.email }}"
+  ),
+  {% endfor %}
+)
+{% endif %}

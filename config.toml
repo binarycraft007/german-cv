@@ -1,0 +1,123 @@
+# config.toml
+# All your personal data goes here.
+# This file is used by the generator script to populate the templates.
+
+[personal]
+name = "Olivia Wilson"
+firstname = "Olivia"
+lastname = "Wilson"
+positions = ["Software Engineer"]
+email = "olivia@example.com"
+phone = "+123-456-7890"
+address = "Anywhere St. 123, Any City"
+zip = "12345"
+city = "Any City"
+github = "olivia"
+linkedin = "olivia-wilson"
+profile_picture = "img/profile.png"
+# signature = "img/signature.png"
+about_me = "Passionate Software Engineer with 5+ years of experience in backend development and distributed systems. Expert in Python and C++ with a growing interest in Golang and Rust. Proven track record of delivering scalable solutions and optimizing legacy codebases."
+
+[[education]]
+degree = "M.Sc. Computer Science"
+institution = "Tech University"
+dates = "2016 - 2018"
+
+[[education]]
+degree = "B.Sc. Computer Science"
+institution = "State College"
+dates = "2012 - 2016"
+
+[[skills]]
+name = "Python"
+level = 90
+
+[[skills]]
+name = "C++"
+level = 80
+
+[[skills]]
+name = "Golang"
+level = 75
+
+[[skills]]
+name = "Rust"
+level = 60
+
+[[skills]]
+name = "SQL / DBs"
+level = 85
+
+[[skills]]
+name = "Docker / K8s"
+level = 70
+
+[[languages]]
+name = "Chinese"
+level = "Native"
+
+[[languages]]
+name = "English"
+level = "B2 Advanced"
+
+[[languages]]
+name = "German"
+level = "Early A1"
+
+[[experience]]
+date = "Aug 2018 - present"
+company = "Tech Solutions Inc."
+title = "Senior Backend Engineer"
+description = [
+    "Led the migration of the core payment service from a monolithic architecture to microservices using *Golang*.",
+    "Optimized critical C++ algorithms resulting in a 30% reduction in latency.",
+    "Mentored junior developers and introduced automated CI/CD pipelines using Docker and Kubernetes."
+]
+
+[[projects]]
+name = "Distributed File System in Rust"
+date = "2023"
+description = "Implemented a simplified distributed file system with replication and fault tolerance using Rust and gRPC."
+
+[[projects]]
+name = "Real-time Chat App"
+date = "2022"
+description = "Built a high-concurrency chat application using Go and WebSockets, handling 10k+ concurrent connections."
+
+[[certificates]]
+name = "Certified Kubernetes Administrator (CKA)"
+issuer = "The Linux Foundation"
+date = "Nov 2023"
+
+[[certificates]]
+name = "AWS Certified Solutions Architect - Associate"
+issuer = "Amazon Web Services (AWS)"
+date = "Feb 2022"
+
+# You can define multiple cover letters here.
+# The generator will create a file for each.
+[[cover_letters]]
+id = "tech_solutions" # will generate coverletter/tech_solutions.typ
+date = "Any City, 25.11.2025" # Using person's city
+subject = "Application for the Software Developer Position"
+salutation = "Dear Mr. Robert Brown,"
+closing = "Sincerely,"
+body = """
+I am writing to apply for the Software Developer position advertised on [Platform]. Having followed your company's innovative work in the [Industry] sector, I am convinced that my background in software engineering makes me a strong candidate for your team.
+
+During my previous role at [Previous Company], I successfully designed and implemented [Project/System], which improved system efficiency by 20%. My technical expertise in [Skill 1] and [Skill 2] aligns perfectly with the requirements of this role.
+
+I am a motivated problem-solver with a strong foundation in [Key Technology]. I thrive in collaborative environments and am eager to bring my skills in [Skill 3] to Tech Solutions Inc.
+
+I would welcome the opportunity to discuss how my experience and enthusiasm can contribute to your company's success. Thank you for considering my application.
+
+I look forward to hearing from you.
+"""
+
+[cover_letters.recipient]
+company = "Tech Solutions Inc."
+contact = "Mr. Robert Brown"
+address = "456 Innovation Drive"
+zip = "98765"
+city = "Techville"
+
